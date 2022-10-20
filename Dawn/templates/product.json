@@ -22,20 +22,24 @@
             "text_style": "subtitle"
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
           }
         },
+        "ee12698f-e4a9-405b-ae96-30349df6c520": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Descrizione",
+            "icon": "none",
+            "content": "<p>T-shirt a manica lunga in 100% cotone disponibile in tre varianti colore<\/p>",
+            "page": ""
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "dropdown"
           }
         },
         "quantity_selector": {
@@ -51,28 +55,21 @@
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
+            "heading": "Materiale",
+            "icon": "none",
+            "content": "<p>100% Cotone<\/p>",
             "page": ""
           }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
+            "heading": "Disponibilità prodotto",
+            "icon": "none",
+            "content": "<p>Le t-shirt sono disponibili in Medium e Large e nei colori Blu, Rosso e Verde<\/p>",
             "page": ""
           }
         },
@@ -87,18 +84,17 @@
         "vendor",
         "title",
         "caption",
-        "description",
         "price",
+        "ee12698f-e4a9-405b-ae96-30349df6c520",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "collapsible-row-0",
-        "collapsible-row-1",
         "collapsible-row-2",
         "share"
       ],
       "settings": {
-        "enable_sticky_info": false,
+        "enable_sticky_info": true,
         "media_position": "left",
         "gallery_layout": "thumbnail",
         "media_size": "large",
@@ -106,7 +102,7 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 12
+        "padding_bottom": 20
       }
     },
     "image-with-text": {
