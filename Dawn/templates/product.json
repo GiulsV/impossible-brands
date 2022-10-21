@@ -22,24 +22,10 @@
             "text_style": "subtitle"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "ee12698f-e4a9-405b-ae96-30349df6c520": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Descrizione",
-            "icon": "none",
-            "content": "<p>T-shirt a manica lunga in 100% cotone disponibile in tre varianti colore<\/p>",
-            "page": ""
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown"
+            "picker_type": "button"
           }
         },
         "quantity_selector": {
@@ -47,10 +33,20 @@
           "settings": {
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
+          }
+        },
+        "5fdb9558-f8eb-4ed4-b6ef-22af5243c429": {
+          "type": "shopify:\/\/apps\/advanced-product-descriptions\/blocks\/advanced-description-with-fallback\/cffc7d91-64c9-4f4d-88f8-8eb78b420747",
+          "settings": {
           }
         },
         "collapsible-row-0": {
@@ -84,24 +80,24 @@
         "vendor",
         "title",
         "caption",
-        "price",
-        "ee12698f-e4a9-405b-ae96-30349df6c520",
         "variant_picker",
         "quantity_selector",
+        "price",
         "buy_buttons",
+        "5fdb9558-f8eb-4ed4-b6ef-22af5243c429",
         "collapsible-row-0",
         "collapsible-row-2",
         "share"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "media_position": "left",
         "gallery_layout": "thumbnail",
-        "media_size": "large",
+        "media_size": "medium",
         "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 40,
         "padding_bottom": 20
       }
     },
