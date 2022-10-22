@@ -15,9 +15,9 @@
 {%- endstyle -%}
 
 <div class="image-with-text image-with-text--{{ section.settings.content_layout }} page-width isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
-  <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
+  <div class="image-with-text__grid {% if section.settings.youtube_video_url  %}image-with-text__youtube-container{% endif %} grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
     <div class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item">
-      <div class="image-with-text__media image-with-text__media--{{ section.settings.height }} gradient color-{{ section.settings.color_scheme }} global-media-settings {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"
+      <div class="image-with-text__media {% if section.settings.youtube_video_url %}image-with-text__youtube-inner-container{% endif %} image-with-text__media--{{ section.settings.height }} gradient color-{{ section.settings.color_scheme }} global-media-settings {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"
         {% if section.settings.height == 'adapt' and section.settings.image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
       >
         {%- if section.settings.image != blank -%}
@@ -27,6 +27,15 @@
             sizes: sizes,
             widths: '165, 360, 535, 750, 1070, 1500'
           }}
+          
+          {%- elsif section.settings.youtube_video_url.type == 'youtube' -%}
+          <iframe src="https://www.youtube.com/embed/{{ section.settings.youtube_video_url.id }}?enablejsapi=1&autoplay=1&mute=1" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+
+           {%- elsif section.settings.video_url -%}
+          <video {% if section.settings.autoplay %} autoplay muted {% endif %} {% if section.settings.show_controls %} controls {% endif %} {% if section.settings.loop_video %} loop {% endif %} playsinline poster="{{ section.settings.video_image_url }}">
+             <source src="{{ section.settings.video_url }}" type="video/mp4">
+          </video>
+
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}
@@ -67,6 +76,44 @@
       "id": "image",
       "label": "t:sections.image-with-text.settings.image.label"
     },
+      {
+      "type": "video_url",
+      "id": "youtube_video_url",
+      "accept": [
+        "youtube"
+      ],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "YouTube Video Url",
+      "placeholder": "Paste your YouTube video link here",
+      "info": "t:sections.video.settings.video_url.info"
+    },
+
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video Url"
+    },
+    {
+      "type": "url",
+      "id": "video_image_url",
+      "label": "Video Image Url"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay if no sound"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_controls",
+      "label": "Show Controls"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop_video",
+      "label": "Loop Video"
+    },
+
     {
       "type": "select",
       "id": "height",

@@ -6,6 +6,34 @@
   position: relative;
 }
 
+.image-with-text__video {
+  display: flex;
+  align-items: center;
+}
+
+.image-with-text__video video {
+  width: 100%;
+}
+
+.image-with-text__youtube-container {
+  display: flex;
+  align-items: center;
+}
+
+
+.image-with-text__youtube-inner-container {
+  min-height: unset;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.image-with-text__youtube-inner-container iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border: 0;
+}
 @media screen and (min-width: 750px) {
   .image-with-text__grid--reverse {
     flex-direction: row-reverse;

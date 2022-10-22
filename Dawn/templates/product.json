@@ -1,5 +1,39 @@
 {
   "sections": {
+    "0b5d98dd-5c38-4793-9ad9-98d6e7c84374": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16669057188132__0b5d98dd-5c38-4793-9ad9-98d6e7c84374-1666468226e3c31476-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--16669057188132__0b5d98dd-5c38-4793-9ad9-98d6e7c84374-1666468226e3c31476-0"
+      ],
+      "settings": {
+        "youtube_video_url": "https:\/\/www.youtube.com\/watch?v=Qq8KScO46Ic",
+        "video_url": "{{ product.metafields.custom.video_prodotto.value }}",
+        "video_image_url": "",
+        "autoplay": true,
+        "show_controls": false,
+        "loop_video": true,
+        "height": "adapt",
+        "desktop_image_width": "large",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -125,12 +159,18 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/laura-chouette-q5MhHapjoJg-unsplash_-_Copia.jpg",
-        "height": "small",
+        "youtube_video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_url": "",
+        "video_image_url": "",
+        "autoplay": false,
+        "show_controls": false,
+        "loop_video": false,
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "content_layout": "overlap",
         "color_scheme": "background-2",
         "mobile_content_alignment": "left",
         "padding_top": 36,
@@ -182,6 +222,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -199,6 +240,7 @@
     }
   },
   "order": [
+    "0b5d98dd-5c38-4793-9ad9-98d6e7c84374",
     "main",
     "image-with-text",
     "multicolumn",
